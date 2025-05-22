@@ -1,5 +1,6 @@
 import React from 'react'
 import './App.css'
+import  Tutor  from './pages/Tutor'
 
 
 function App() {
@@ -7,7 +8,8 @@ function App() {
 
   return (
     <>
-      
+      <Tutor />
+
     </>
   )
 }
