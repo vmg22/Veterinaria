@@ -22,10 +22,64 @@ db.connect((err) => {
   }
 });
 
-// Endpoint para obtener todos los tutores
+
+
+// Empleados
+app.get('/api/empleados', (req, res) => {
+  db.query('SELECT * FROM empleados', (err, results) => {
+    if (err) return res.status(500).json({
+      error: err
+    });
+    res.json(results);
+  });
+});
+
+// Historial clínico
+app.get('/api/historial_clinico', (req, res) => {
+  db.query('SELECT * FROM historial_clinico', (err, results) => {
+    if (err) return res.status(500).json({
+      error: err
+    });
+    res.json(results);
+  });
+});
+
+// Mascotas
+app.get('/api/mascotas', (req, res) => {
+  db.query('SELECT * FROM mascotas', (err, results) => {
+    if (err) return res.status(500).json({
+      error: err
+    });
+    res.json(results);
+  });
+});
+
+// Turnos
+app.get('/api/turnos', (req, res) => {
+  db.query('SELECT * FROM turnos', (err, results) => {
+    if (err) return res.status(500).json({
+      error: err
+    });
+    res.json(results);
+  });
+});
+
+// Tutores
 app.get('/api/tutores', (req, res) => {
   db.query('SELECT * FROM tutores', (err, results) => {
-    if (err) return res.status(500).json({ error: err });
+    if (err) return res.status(500).json({
+      error: err
+    });
+    res.json(results);
+  });
+});
+
+// Vacunas
+app.get('/api/vacunas', (req, res) => {
+  db.query('SELECT * FROM vacunas', (err, results) => {
+    if (err) return res.status(500).json({
+      error: err
+    });
     res.json(results);
   });
 });
